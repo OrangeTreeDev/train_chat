@@ -1,0 +1,19 @@
+<!--pages/search/search.wxml-->
+<view class="page-search">
+  <view class="view-title">
+    <image src="../../assets/images/train.png"></image>
+    <text>车票信息</text>
+  </view>
+  <view class="view-search">
+    <form>
+      <input id="number" placeholder="输入车次"></input>
+      <picker id="depature-date" mode="date">
+        <view>选择开车日期</view>
+      </picker>
+      <picker id="depature-time" mode="time">
+        <view>选择开车时间</view>
+      </picker>
+    </form>
+  </view>
+  <button class="btn-submit">发现趣事</button>
+</view>

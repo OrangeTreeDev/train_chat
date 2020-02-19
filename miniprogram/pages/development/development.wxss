@@ -1,0 +1,97 @@
+/* pages/development/development.wxss */
+.developments {
+  padding: 0 36rpx;
+}
+.development {
+  display: flex;
+  margin-top: 24rpx;
+  border-bottom: 2rpx solid #E9E9E8;
+}
+.development .avatar {
+  width: 84rpx;
+  height: 84rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+
+/* 图文消息 */
+.message .nickname {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #5E6990;
+}
+.message .detail {
+  width: 570rpx;
+}
+.message .detail .text {
+  margin-top: 22rpx;
+   word-break:break-all;
+}
+.message .detail .photos {
+  margin-top: 22rpx;
+}
+.message .detail .photos image {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 12rpx;
+}
+
+/* 互动按钮 */
+.message .interaction {
+  display: flex;
+  height: 80rpx;
+  align-items: center;
+}
+.interaction .interaction-item {
+  display: flex;
+  align-items: center;
+}
+.interaction .interaction-item image {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 8rpx;
+}
+.interaction .interaction-item text {
+  font-size: 28rpx;
+}
+.interaction .like {
+  margin-left: 24rpx
+}
+/* p评论 */
+.comments {
+  background-color: #F3F3F5;
+  margin-bottom: 28rpx;
+}
+.comments .comment-item {
+  font-size: 32rpx;
+  line-height: 1.6;
+}
+.comments .comment-item .speaker {
+  color: #576B95;
+}
+.comments .comment-item .reply {
+  margin: 0 4rpx;
+}
+.comments .comment-item .mentioned {
+  color: #576B95;
+}
+
+/* 评论输入框 */
+.comment-input-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #F3F3F5;
+  padding: 10rpx 20rpx;
+}
+.comment-input-container .input-panel {
+  background-color: white;
+  border-radius: 8rpx;
+  padding: 20rpx;
+}
+.comment-input-container .input {
+  background-color: white;
+  border-radius: 8rpx;
+  width: 100%;
+}

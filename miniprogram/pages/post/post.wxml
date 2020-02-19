@@ -1,0 +1,17 @@
+<!--pages/post/post.wxml-->
+<view class="page-post">
+  <view class="message">
+    <textarea placeholder="有什么想说的..." style="height: {{textAreaHeight}}" bindlinechange="bindlinechange" bindinput="bindInput">
+    </textarea>
+  </view>
+  <view class="pictures">
+    <block wx:for="{{tempImagePaths}}" wx:key="*this">
+      <image  class="picture" src="{{item}}"></image>
+    </block>
+    <view wx:if="{{tempImagePaths.length < 3}}" class="btn-add" bindtap="bindAddBtnTap"></view>
+  </view>
+  <view class="actions">
+    <!-- <input class="test" cursor-spacing="10"></input> -->
+    <button class="btn-submit" size="default" bindtap="bindPostBtnTap">发布</button>
+  </view>
+</view>

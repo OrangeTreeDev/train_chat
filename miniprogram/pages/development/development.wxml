@@ -1,0 +1,47 @@
+<!--pages/development/development.wxml-->
+<!--pages/home/home.wxml-->
+<view class="page-developments">
+  <view class="developments">
+    <scroll-view>
+      <view class="development">
+        <image class="avatar" src="../../assets/images/avatar.jpg"></image>
+        <view class="message">
+          <view class="nickname">孙立想</view>
+          <view class="detail">
+            <rich-text class="text">牛牛牛牛牛牛牛牛牛牛牛牛牛牛牛牛牛牛！！！</rich-text>
+            <view class="photos">
+              <image src="../../assets/images/avatar.jpg"></image>
+              <image src="../../assets/images/avatar.jpg"></image>
+              <image src="../../assets/images/avatar.jpg"></image>
+            </view>
+          </view>
+          <view class="interaction">
+            <view class="interaction-item commit" bindtap='bindCommentBtnTap'>
+              <image src="../../assets/images/comment.png"></image>
+              <text>评论</text>
+            </view>
+            <view class="interaction-item like">
+              <image src="../../assets/images/like.png"></image>
+              <text>赞</text>
+            </view>
+          </view>
+          <view class='comments'>
+            <block wx:for="{{comments}}" wx:key="index">
+              <view data-speakername="{{item.speakerName}}" class='comment-item' bindtap='bindCommentTap'>
+                <text class='speaker'>{{item.speakerName}}</text>
+                <text wx-if="{{item.listenerName}}" class='reply'>回复</text>
+                <text wx-if="{{item.listenerName}}" class='mentioned'>柯南</text>
+                <text class='message'>: {{item.message}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view wx:if="{{commentTextAreaShown}}" class='comment-input-container'>
+      <view class='input-panel'>
+        <textarea class="input" placeholder='{{commentTextAreaPlaceHolder}}' cursor-spacing="{{cursorSpacing}}" disable-default-padding="{{true}}" auto-focus='{{true}}' bindconfirm='bindInputConfirm'></textarea>
+      </view>
+    </view>
+  </view>
+</view>

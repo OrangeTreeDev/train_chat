@@ -1,0 +1,4 @@
+/* 页面样式 */
+page {
+  background-color: #F5F6F8
+}

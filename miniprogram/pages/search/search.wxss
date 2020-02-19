@@ -1,0 +1,47 @@
+/* pages/search/search.wxss */
+@import "../../assets/style/common.wxss";
+
+.page-search {
+  padding: 0 40rpx;
+}
+
+/* 标题样式 */
+.page-search .view-title {
+  margin: 30rpx 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 0;
+}
+.page-search .view-title image {
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.page-search .view-title text {
+    font-size: 40rpx;
+    vertical-align: middle;
+}
+/* 搜索表单 */
+.view-search {
+  background-color: white;
+  padding: 40rpx 40rpx 60rpx;
+  font-size: 36rpx;
+}
+.view-search input {
+  height: 94rpx;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+.view-search picker view {
+  height: 94rpx;
+  line-height: 94rpx;
+  border-bottom: 1rpx solid #F2F2F2;
+}
+
+
+/* 按钮 */
+.btn-submit {
+  margin-top: 60rpx;
+  background-color: #5F82FB;
+  color: white;
+}

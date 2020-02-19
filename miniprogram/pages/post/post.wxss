@@ -1,0 +1,63 @@
+/* pages/post/post.wxss */
+/* 发帖视图 */
+.page-post {
+  padding: 0 40rpx;
+}
+
+/* 文字输入框 */
+.page-post .message textarea {
+  transition: height 200ms;
+}
+
+/* 图片缩略 */
+.page-post .pictures {
+  margin-top: 60rpx;
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.page-post .pictures .picture {
+  width: 220rpx;
+  height: 220rpx;
+  flex-shrink: 0;
+  margin-right: 10rpx;
+}
+
+/* 添加图片按钮 */
+.btn-add {
+  position: relative;
+  background-color: rgb(226, 226, 226);
+  width: 220rpx;
+  height: 220rpx;
+}
+.btn-add::before {
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  width: 80rpx;
+  margin-left: -40rpx;
+  margin-top: -2rpx;
+  border-top: 4rpx solid gray;
+}
+.btn-add::after {
+  position: absolute;
+  content: '';
+  left: 50%;
+  top: 50%;
+  height: 80rpx;
+  margin-top: -40rpx;
+  margin-left: -2rpx;
+  border-left: 4rpx solid gray;
+}
+
+/* 发布按钮 */
+.page-post .actions .btn-submit {
+  position: absolute;
+  width: auto;
+  left: 40rpx;
+  right: 40rpx;
+  bottom: 60rpx;
+  background-color: #5F82FB;
+  color: white;
+}
