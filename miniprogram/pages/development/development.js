@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    developments: [],
     cursorSpacing: '30rpx',
     commentTextAreaShown: false,
     commentTextAreaPlaceHolder: '',
@@ -27,7 +28,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const { developments } = this.data;
+    wx.cloud.callFunction({
+      name: 'get_developments',
+      data: {
+        pageIndex: 1,
+        pageSize: 10,
+        refreshTimestamp: Date.now()
+      }
+    }).then(res => {
+      console.log(res);
+      this.setData({
+        developments: [...developments, ...res.result.data],
+      });
+    });
   },
 
   /**

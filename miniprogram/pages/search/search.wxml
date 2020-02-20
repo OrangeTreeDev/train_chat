@@ -1,4 +1,12 @@
 <!--pages/search/search.wxml-->
+<!-- 授权页面 -->
+<view class='modal-login' wx:if="{{!hasAuthUserinfoScope}}">
+  <image src='../../assets/images/chat.png'></image>
+  <view>
+    <text>无聊的火车上，让我们聊些有趣的事吧</text>
+  </view>
+  <button class="btn-submit" open-type='getUserInfo' bindgetuserinfo='bindgetuserinfo'>登录后发现趣事</button>
+</view>
 <view class="page-search">
   <view class="view-title">
     <image src="../../assets/images/train.png"></image>
@@ -6,14 +14,16 @@
   </view>
   <view class="view-search">
     <form>
-      <input id="number" placeholder="输入车次"></input>
-      <picker id="depature-date" mode="date">
+      <input id="number" placeholder="车次" bindblur='bindNumberInputBlur'></input>
+      <input id="departure" placeholder="出发城市" bindblur='bindDepartureInputBlur'></input>
+      <input id="destination" placeholder="到达城市" bindblur='bindDestinationInputBlur'></input>
+      <!-- <picker id="depature-date" mode="date">
         <view>选择开车日期</view>
       </picker>
       <picker id="depature-time" mode="time">
         <view>选择开车时间</view>
-      </picker>
+      </picker> -->
     </form>
   </view>
-  <button class="btn-submit">发现趣事</button>
+  <button class="btn-submit" bindtap='bindSearchBtnTap'>上车</button>
 </view>

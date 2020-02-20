@@ -5,14 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    hasAuthUserinfoScope: false,
+    number: '',
+    departure: '',
+    destination: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.getSetting({
+      success: (res) => {
+        let hasAuthUserinfoScope = false;
+        if(res.authSetting['scope.userInfo']) {
+          hasAuthUserinfoScope = true;
+        }
+        this.setData({
+          hasAuthUserinfoScope
+        });
+      },
+    });
   },
 
   /**
@@ -28,39 +41,59 @@ Page({
   onShow: function () {
 
   },
-
   /**
-   * 生命周期函数--监听页面隐藏
+   * 获取用户信息按钮点击
    */
-  onHide: function () {
-
+  bindgetuserinfo(e) {
+    // 用户授权获取用户信息
+    if (e.detail.rawData) {
+      wx.setStorage({
+        key: 'userinfo',
+        data: e.detail.rawData,
+        success: () => {
+          this.setData({
+            hasAuthUserinfoScope: true
+          }); 
+        }
+      });
+    }
   },
-
   /**
-   * 生命周期函数--监听页面卸载
+   * 车次输入框失去焦点
    */
-  onUnload: function () {
-
+  bindNumberInputBlur(e) {
+    this.setData({
+      number: e.detail.value
+    });
   },
-
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 出发城市输入框失去焦点
    */
-  onPullDownRefresh: function () {
-
+  bindDepartureInputBlur(e) {
+    this.setData({
+      departure: e.detail.value
+    });
   },
-
   /**
-   * 页面上拉触底事件的处理函数
+   * 达到城市输入框失去焦点
    */
-  onReachBottom: function () {
-
+  bindDestinationInputBlur(e) {
+    this.setData({
+      destination: e.detail.value
+    });
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  bindSearchBtnTap() {
+    const { number, departure, destination } = this.data;
+    // 检查参数
+    wx.cloud.callFunction({
+      name: 'get_train',
+      data: {
+        number,
+        departure,
+        destination
+      }
+    }).then(res => {
+      console.log(res);
+    });
   }
 })

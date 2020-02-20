@@ -141,7 +141,6 @@ Page({
         trainNumber: 'G2020',
         departureTime: Date.now(),
         createAt: Date.now(),
-        updateAt: Date.now()
       },
     })
     .then(() => {

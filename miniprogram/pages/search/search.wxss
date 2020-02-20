@@ -1,6 +1,32 @@
 /* pages/search/search.wxss */
 @import "../../assets/style/common.wxss";
 
+/* 授权遮罩页 */
+.modal-login {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: white;
+  text-align: center;
+}
+.modal-login image {
+  margin-top: 160rpx;
+  height: 300rpx;
+  width: 300rpx;
+}
+.modal-login text {
+  font-size: 28rpx;
+  color: lightgray;
+}
+.modal-login button {
+  margin: 80rpx 40rpx;
+  background-color: #5F82FB;
+  color: white;
+}
+
 .page-search {
   padding: 0 40rpx;
 }
